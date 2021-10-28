@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="row g-0">
+        <div class="col">
+            <div class="card-body">
+                <img src="{{ qs.photo }}" class="card-img-top" alt="">
+                <h5 class="card-title">{{ qs.master }}</h5>
+                <p class="card-text">{{ qs.description|safe|linebreaks|truncatewords:100 }}</p>
+                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis facilis ipsa
+                    nobis rerum similique. Accusantium atque, blanditiis culpa cum debitis deserunt molestiae
+                    mollitia quisquam ratione repudiandae sequi veniam vitae voluptate? Alias aliquam aperiam beatae
+                    corporis dignissimos dolorem et eum facilis fuga fugiat, illo laboriosam nostrum odit
+                    perspiciatis similique totam veniam? Ab aspernatur, dicta dolores eaque eos harum in incidunt,
+                    ipsam magni quaerat, repellat sed soluta ullam? Ab aliquam animi fugiat hic illum impedit,
+                    minima natus perspiciatis quaerat quam quas quasi quo reiciendis rerum similique! Architecto
+                    asperiores, aut beatae consequatur consequuntur corporis eius enim, ipsum magni molestias
+                    officia sed sit voluptates.</p>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

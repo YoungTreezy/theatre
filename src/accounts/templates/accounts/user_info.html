@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Information
+{% endblock %}
+
+{% block content %}
+    {% for u in users %}
+        {% if u.nickname is null %}
+            <h1>{{ u.email }}</h1>
+            <a href="{% url 'accounts:change_information' u.id %}">Добавьте свои данные.</a>
+        {% else %}
+            {{ u.nickname }}
+            <img src="{{ u.photo }}" alt="Тут должно быть фото">
+            {{ u.first_name }}
+            {{ u.last_name }}
+            {{ u.email }}
+            <a href="{% url 'accounts:change_information' u.id %}">Вы можете изменить свои данные.</a>
+        {% endif %}
+        <div>
+            <a href="{% url 'notes:notes' u.id %}">Заметки</a>
+            <a href="{% url 'notes:add_note' u.id %}">Добавить заметку</a>
+        </div>
+    {% endfor %}
+
+{% endblock %}

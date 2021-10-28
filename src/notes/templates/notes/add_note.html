@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %} Add note {% endblock %}
+
+{% block content %}
+
+    <div class="row">
+        <div class="col-md-8 mx-auto">
+            <h4 class="my-2">Добавление новой заметки</h4>
+            <form method="POST" action="">{% csrf_token %}
+                <div class="form-group">
+                    {{ form.as_p }}
+                </div>
+                <button type="submit" class="btn btn-primary">Добавить заметку</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}

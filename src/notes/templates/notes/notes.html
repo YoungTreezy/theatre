@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Notes
+{% endblock %}
+
+{% block content %}
+    <div>
+        {#        <a href="{% url 'notes:add_note' %}">Добавить заметку</a>#}
+    </div>
+    <div>
+        {% for q in qs %}
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">{{ q.title }}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Дед лион: {{ q.finish }}</h6>
+                    <p class="card-text">{{ q.description }}</p>
+                </div>
+            </div>
+        {% endfor %}
+
+    </div>
+{% endblock %}
